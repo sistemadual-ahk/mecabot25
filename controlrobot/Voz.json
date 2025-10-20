@@ -1,0 +1,203 @@
+{
+  "name": "My workflow 5",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "4b68e260-2817-4c8f-b3eb-e332e32ddfed",
+        "responseMode": "responseNode",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "GET, POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -32,
+        -144
+      ],
+      "id": "d6713bf4-7166-4fa1-9128-de367c2aee55",
+      "name": "Webhook Entrada",
+      "webhookId": "4b68e260-2817-4c8f-b3eb-e332e32ddfed"
+    },
+    {
+      "parameters": {
+        "respondWith": "binary",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "audio/mpeg"
+              },
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1168,
+        -144
+      ],
+      "id": "00b300cc-226a-4247-bb4a-d505774bd9c6",
+      "name": "Responder con Audio"
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "binaryPropertyName": "audio",
+        "options": {
+          "language": "es"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        320,
+        -160
+      ],
+      "id": "f011a65a-9cc4-4876-b847-0c92c4feade0",
+      "name": "Transcribe a recording",
+      "credentials": {
+        "openAiApi": {
+          "id": "A3rgfDdaf6ni51Np",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-nano",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-NANO"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "={{$json[\"text\"]}}\n"
+            },
+            {
+              "content": "Que sea respuesta de 25 palabras máximo. Devolveme el texto en el mismo idioma en el que se recibio"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        528,
+        -160
+      ],
+      "id": "745db48a-8d19-4937-b841-bb8347ec0f1f",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "A3rgfDdaf6ni51Np",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "input": "={{ $json.message.content }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        880,
+        -160
+      ],
+      "id": "7ad51ed2-fff3-4da1-b2a4-54c0a8bcb9fe",
+      "name": "Generate audio",
+      "credentials": {
+        "openAiApi": {
+          "id": "A3rgfDdaf6ni51Np",
+          "name": "OpenAi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook Entrada": {
+      "main": [
+        [
+          {
+            "node": "Transcribe a recording",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcribe a recording": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Generate audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate audio": {
+      "main": [
+        [
+          {
+            "node": "Responder con Audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "e1d4c909-dbf7-4508-8ba0-fe05be2bed4e",
+  "meta": {
+    "instanceId": "9cf8e88b47fef5e28a7cbccbc96c97787a6a682cc15699e5fe812868b3cabd9e"
+  },
+  "id": "0vQX6U4nKZ6a5Kb6",
+  "tags": []
+}
