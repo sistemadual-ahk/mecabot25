@@ -1,6 +1,6 @@
 // Crear conexión WebSocket con Node-RED
 // Por defecto Node-RED expone ws://localhost:1880/ws/<path>
-const socket = new WebSocket("https:://localhost:1880/comando");
+const socket = new WebSocket("https://localhost:1880/comando");
 
 // Evento: cuando se abre la conexión
 socket.onopen = () => {
@@ -49,3 +49,4 @@ document.getElementById("vacio4").addEventListener("pointerdown", () => enviarCo
 document.getElementById("vacio5").addEventListener("pointerdown", () => enviarComando("vacio"));
 
 document.getElementById("vacio6").addEventListener("pointerdown", () => enviarComando("vacio"));
+
