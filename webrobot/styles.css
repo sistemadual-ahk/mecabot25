@@ -183,3 +183,30 @@ h2 {
     transform: scale(0.95);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
+/* ==================================== */
+/* 4. Estilos para el Botón de PARADA */
+/* ==================================== */
+
+/* Estilo específico para el nuevo botón central */
+.stop-button {
+    /* Color de peligro/parada */
+    background-color: #F00000; 
+    /* Lo hacemos redondo y del mismo tamaño que las flechas */
+    border-radius: 50%;
+    /* Mantenemos el margen para que esté bien espaciado */
+    margin: 6px; 
+}
+
+.stop-button:hover {
+    background-color: #C00000; 
+}
+
+.stop-button:active {
+    /* Mismos efectos de pulsado */
+    transform: scale(0.95);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.stop-button i {
+    font-size: 32px; /* Un ícono grande para que se note */
+}
