@@ -1,0 +1,185 @@
+/* Estilos Globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cuerpo: Contenedores Apilados para Móviles */
+body {
+    display: flex;
+    flex-direction: column; /* Apila los contenedores verticalmente */
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg,rgba(182, 45, 189, 1) 0%, rgba(148, 95, 222, 1) 46%, rgba(237, 86, 83, 1) 98%);
+    padding: 20px 10px; /* Padding ajustado para móvil */
+    gap: 20px; /* Espacio entre los dos contenedores */
+}
+
+/* Contenedor de Movimiento (Mueve a BGZ) */
+.container {
+    background: linear-gradient(to bottom right,rgba(103, 125, 235, 1) 0%, rgba(94, 94, 209, 1) 35%, rgba(49, 201, 232, 1) 100%);
+    border-radius: 40px; /* Reducido para móvil */
+    box-shadow: 0 15px 30px rgba(251, 255, 0, 0.767);
+    padding: 20px;
+    text-align: center;
+    max-width: 95%; /* Asegura que ocupe casi todo el ancho */
+    width: 350px; /* Ancho máximo estándar para móvil */
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 24px; /* Ajuste de tamaño */
+}
+
+.instructions {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #000000;
+}
+
+/* Panel de Control (Flechas) */
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.arrow-row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.arrow {
+    width: 70px; /* Tamaño más pequeño para móvil */
+    height: 70px;
+    margin: 6px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+
+.arrow:hover {
+    transform: scale(1.05);
+}
+
+.arrow:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.arrow i {
+    font-size: 28px; /* Tamaño de ícono ajustado */
+}
+
+/* Colores de las flechas (se mantienen) */
+#up { background-color: #2ecc71; }
+#up:hover { background-color: #27ae60; }
+
+#down { background-color: #e74c3c; }
+#down:hover { background-color: #c0392b; }
+
+#left { background-color: #f39c12; }
+#left:hover { background-color: #d35400; }
+
+#right { background-color: #9b59b6; }
+#right:hover { background-color: #8e44ad; }
+
+.status {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    font-weight: 500;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* Contenedor de Acciones (Haz que BGZ realice acciones) */
+.actions-container {
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(181, 43, 110, 1) 50%, rgba(252, 69, 115, 1) 100%);
+    border-radius: 40px; /* Reducido para móvil */
+    box-shadow: 0 15px 30px rgba(251, 255, 0, 0.767);
+    padding: 20px;
+    text-align: center;
+    max-width: 95%; /* Asegura que ocupe casi todo el ancho */
+    width: 350px; /* Ancho máximo consistente con .container */
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.instructions2 {
+    background-color: #de72ff;
+    padding: 8px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #000000;
+}
+
+/* Contenedor de Bloques de Acción */
+.actions-container-blocks {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los bloques salten de línea */
+    justify-content: center; /* Centra los bloques en la línea */
+    gap: 8px; /* Espacio entre los bloques */
+    margin-bottom: 0;
+}
+
+.action {
+    /* Reducimos el ancho y el margen para garantizar que caben dos */
+    width: 135px;
+    height: 135px;
+    margin: 5px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.164);
+    user-select: none;
+    font-size: 14px; 
+    padding: 10px;
+    flex-direction: column; 
+}
+.action h3, .action h4, .action h5, .action h6, .action h7, .action h8 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+}
+.action i {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 5px;
+}
+.action:hover {
+    transform: scale(1.05);
+}
+
+.action:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
