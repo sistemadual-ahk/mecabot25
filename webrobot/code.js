@@ -21,19 +21,11 @@ function enviarComando(comando) {
     console.error("El WebSocket no está conectado");
   }
 }
-
-
-
 // Asignar eventos a cada flecha
 document.getElementById("up").addEventListener("pointerdown", () => enviarComando("adelante"));
 document.getElementById("down").addEventListener("pointerdown", () => enviarComando("atras"));
 document.getElementById("left").addEventListener("pointerdown", () => enviarComando("izquierda"));
 document.getElementById("right").addEventListener("pointerdown", () => enviarComando("derecha"));
-
-document.getElementById("up").addEventListener("pointerup", () => enviarComando("frenar"));
-document.getElementById("down").addEventListener("pointerup", () => enviarComando("frenar"));
-document.getElementById("left").addEventListener("pointerup", () => enviarComando("frenar"));
-document.getElementById("right").addEventListener("pointerup", () => enviarComando("frenar"));
 
 document.getElementById("saludar").addEventListener("pointerdown", () => enviarComando("saludar"));
 document.getElementById("bailar").addEventListener("pointerdown", () => enviarComando("bailar"));
@@ -41,15 +33,13 @@ document.getElementById("aplaudir").addEventListener("pointerdown", () => enviar
 document.getElementById("culturista").addEventListener("pointerdown", () => enviarComando("culturista"));
 document.getElementById("si").addEventListener("pointerdown", () => enviarComando("si"));
 document.getElementById("no").addEventListener("pointerdown", () => enviarComando("no"));
+document.getElementById("stop").addEventListener("pointerdown", () => enviarComando("frenar"));
 // --- NUEVOS BOTONES VACÍOS ---
 document.getElementById("mate").addEventListener("pointerdown", () => enviarComando("mate"));
 document.getElementById("vacio2").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio3").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio4").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio5").addEventListener("pointerdown", () => enviarComando("vacio"));
-
 document.getElementById("vacio6").addEventListener("pointerdown", () => enviarComando("vacio"));
-
-
 
 
