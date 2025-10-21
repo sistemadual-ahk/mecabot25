@@ -45,7 +45,7 @@
         "type": "http in",
         "z": "ab306f51f2a334fb",
         "name": "",
-        "url": "/comando",
+        "url": "/code",
         "method": "post",
         "upload": false,
         "skipBodyParsing": false,
@@ -126,7 +126,7 @@
     {
         "id": "fbfac11a65c4d030",
         "type": "websocket-listener",
-        "path": "/ws/CodigoRobot",
+        "path": "/ws/code",
         "wholemsg": "false"
     }
 ]
