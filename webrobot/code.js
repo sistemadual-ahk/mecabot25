@@ -1,6 +1,6 @@
 // Crear conexión WebSocket con Node-RED
 // Por defecto Node-RED expone ws://localhost:1880/ws/<path>
-const socket = new WebSocket("ws://192.168.2.150:1880/ws/code");
+const socket = new WebSocket("ws://127.0.0.1:1880/ws/code");
 
 // Evento: cuando se abre la conexión
 socket.onopen = () => {
@@ -27,7 +27,10 @@ document.getElementById("down").addEventListener("pointerdown", () => enviarComa
 document.getElementById("left").addEventListener("pointerdown", () => enviarComando("izquierda"));
 document.getElementById("right").addEventListener("pointerdown", () => enviarComando("derecha"));
 
-document.getElementById("saludar").addEventListener("pointerdown", () => enviarComando("saludar"));
+document.getElementById("lev_brazo_izq").addEventListener("pointerdown", () => enviarComando("levantar brazo izquierdo"));
+document.getElementById("baj_brazo_izq").addEventListener("pointerdown", () => enviarComando("bajar brazo izquierdo"));
+document.getElementById("lev_brazo_der").addEventListener("pointerdown", () => enviarComando("levantar brazo derecho"));
+document.getElementById("baj_brazo_der").addEventListener("pointerdown", () => enviarComando("bajar brazo derecho"));
 document.getElementById("bailar").addEventListener("pointerdown", () => enviarComando("bailar"));
 document.getElementById("aplaudir").addEventListener("pointerdown", () => enviarComando("aplaudir"));
 document.getElementById("culturista").addEventListener("pointerdown", () => enviarComando("culturista"));
