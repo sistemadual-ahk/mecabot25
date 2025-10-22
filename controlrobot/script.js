@@ -1,5 +1,5 @@
-const WEBHOOK_URL_NODE = "https://192.168.2.150:1880/comando";
-const WEBHOOK_URL_N8N = "https://192.168.2.150:5678/webhook-test/4b68e260-2817-4c8f-b3eb-e332e32ddfed";
+const WEBHOOK_URL_NODE = "http://192.168.2.150:1880/comando";
+const WEBHOOK_URL_N8N = "http://192.168.2.150:5678/webhook-test/4b68e260-2817-4c8f-b3eb-e332e32ddfed";
 
 const videoElement = document.getElementById('video');
 const ojoIzq = document.getElementById('ojo-izq');
@@ -427,6 +427,7 @@ function procesarPreguntaAvanzada(texto) {
 
   return false; // no coincidió con ninguna pregunta ni comando
 }
+
 
 
 
