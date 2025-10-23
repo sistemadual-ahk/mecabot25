@@ -35,6 +35,17 @@ document.getElementById("levantar_cabeza").addEventListener("pointerdown", () =>
 document.getElementById("bajar_cabeza").addEventListener("pointerdown", () => enviarComando("bajar cabeza"));
 document.getElementById("girar_cabeza_izq").addEventListener("pointerdown", () => enviarComando("girar cabeza izq"));
 document.getElementById("girar_cabeza_der").addEventListener("pointerdown", () => enviarComando("girar cabeza der"));
+
+document.getElementById("flex_codo_izq").addEventListener("pointerdown", () => enviarComando("flex codo izq"));
+document.getElementById("flex_codo_der").addEventListener("pointerdown", () => enviarComando("flex codo der"));
+document.getElementById("ext_codo_izq").addEventListener("pointerdown", () => enviarComando("ext codo izq"));
+document.getElementById("ext_codo_der").addEventListener("pointerdown", () => enviarComando("ext codo der"));
+document.getElementById("abrir_pinzas_izq").addEventListener("pointerdown", () => enviarComando("abrir pinzas izq"));
+document.getElementById("cerrar_pinzas_izq").addEventListener("pointerdown", () => enviarComando("cerrar pinzas izq"));
+document.getElementById("abrir_pinzas_der").addEventListener("pointerdown", () => enviarComando("abrir pinzas der"));
+document.getElementById("cerrar_pinzas_der").addEventListener("pointerdown", () => enviarComando("cerrar pinzas der"));
+
+
 document.getElementById("bailar").addEventListener("pointerdown", () => enviarComando("bailar"));
 document.getElementById("aplaudir").addEventListener("pointerdown", () => enviarComando("aplaudir"));
 document.getElementById("culturista").addEventListener("pointerdown", () => enviarComando("culturista"));
