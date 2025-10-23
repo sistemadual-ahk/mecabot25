@@ -12,14 +12,14 @@ body {
     flex-direction: column; /* Apila los contenedores verticalmente */
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(90deg,rgba(182, 45, 189, 1) 0%, rgba(148, 95, 222, 1) 46%, rgba(237, 86, 83, 1) 98%);
+    background: linear-gradient(5deg,rgba(0, 162, 255, 1) 0%, rgba(135, 211, 255, 1) 50%, rgba(0, 162, 255, 1) 100%);
     padding: 20px 10px; /* Padding ajustado para móvil */
     gap: 20px; /* Espacio entre los dos contenedores */
 }
 
 /* Contenedor de Movimiento (Mueve a BGZ) */
 .container {
-    background: linear-gradient(to bottom right,rgba(103, 125, 235, 1) 0%, rgba(94, 94, 209, 1) 35%, rgba(49, 201, 232, 1) 100%);
+    background: linear-gradient(36deg,rgba(0, 162, 255, 1) 0%, rgba(176, 226, 255, 1) 50%, rgba(0, 162, 255, 1) 100%);
     border-radius: 40px; /* Reducido para móvil */
     box-shadow: 0 15px 30px rgba(251, 255, 0, 0.767);
     padding: 20px;
@@ -35,7 +35,7 @@ h1 {
 }
 
 .instructions {
-    background-color: #f8f9fa;
+    background-color: #00A2FF;
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -62,7 +62,7 @@ h1 {
     height: 70px;
     margin: 6px;
     border-radius: 50%;
-    color: white;
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,23 +86,23 @@ h1 {
 }
 
 /* Colores de las flechas (se mantienen) */
-#up { background-color: #2ecc71; }
-#up:hover { background-color: #27ae60; }
+#up { background-color: #00A2FF; }
+#up:hover { background-color: #42baff; }
 
-#down { background-color: #e74c3c; }
-#down:hover { background-color: #c0392b; }
+#down { background-color: #00A2FF; }
+#down:hover { background-color: #42baff; }
 
-#left { background-color: #f39c12; }
-#left:hover { background-color: #d35400; }
+#left { background-color: #00A2FF; }
+#left:hover { background-color: #42baff; }
 
-#right { background-color: #9b59b6; }
-#right:hover { background-color: #8e44ad; }
+#right { background-color: #00A2FF; }
+#right:hover { background-color: #42baff; }
 
 .status {
     margin-top: 15px;
     padding: 10px;
     border-radius: 6px;
-    background-color: #f8f9fa;
+    background-color: #00A2FF;
     font-weight: 500;
     min-height: 40px;
     display: flex;
@@ -113,7 +113,7 @@ h1 {
 
 /* Contenedor de Acciones (Haz que BGZ realice acciones) */
 .actions-container {
-    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(181, 43, 110, 1) 50%, rgba(252, 69, 115, 1) 100%);
+    background: linear-gradient(90deg,rgba(0, 162, 255, 1) 0%, rgba(189, 231, 255, 1) 50%, rgba(0, 162, 255, 1) 100%);
     border-radius: 40px; /* Reducido para móvil */
     box-shadow: 0 15px 30px rgba(251, 255, 0, 0.767);
     padding: 20px;
@@ -129,12 +129,12 @@ h2 {
 }
 
 .instructions2 {
-    background-color: #de72ff;
+    background-color: #00A2FF;
     padding: 8px;
     border-radius: 10px;
     margin-bottom: 15px;
     font-size: 14px;
-    color: #000000;
+    color: #ffffff;
 }
 
 /* Contenedor de Bloques de Acción */
@@ -152,7 +152,7 @@ h2 {
     height: 135px;
     margin: 5px;
     border-radius: 10px;
-    color: rgb(255, 255, 255);
+    color: rgb(252, 251, 194);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,7 +190,7 @@ h2 {
 /* Estilo específico para el nuevo botón central */
 .stop-button {
     /* Color de peligro/parada */
-    background-color: #F00000; 
+    background-color: #fdff6d; 
     /* Lo hacemos redondo y del mismo tamaño que las flechas */
     border-radius: 50%;
     /* Mantenemos el margen para que esté bien espaciado */
@@ -198,7 +198,7 @@ h2 {
 }
 
 .stop-button:hover {
-    background-color: #C00000; 
+    background-color: #fdff8f; 
 }
 
 .stop-button:active {
@@ -209,4 +209,9 @@ h2 {
 
 .stop-button i {
     font-size: 32px; /* Un ícono grande para que se note */
+}
+
+/* Hacer la mano del botón de PARADA negra sin afectar las flechas */
+.stop-button i {
+    color: #ffee00; /* mano negra */
 }
