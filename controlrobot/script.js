@@ -234,7 +234,7 @@ faceMesh.onResults((results) => {
     ojoDer.style.transform = `translate(${limX}px, ${limY}px)`;
     bocaContenedor.style.transform = `translate(${limX * 0.5}px, ${limY * 0.5}px)`;
 
-    const umbralX = caraRect.width * 0.1;
+    const umbralX = caraRect.width * 0.08;
     const umbralY = caraRect.height * 0.08;
     let direccion = null;
 
@@ -607,5 +607,6 @@ async function enviarPreguntaPersonalizada(pregunta){
       }, 500);
     }
 }
+
 
 
