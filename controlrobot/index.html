@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Robot con Activación por Voz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <video id="video" autoplay playsinline muted></video>
+
+  <div class="cara" id="cara">
+    <div class="ojos">
+      <div class="ojo-contenedor">
+        <div class="ceja" id="ceja-izq"></div>
+        <div class="ojo" id="ojo-izq"></div>
+      </div>
+      <div class="ojo-contenedor">
+        <div class="ceja" id="ceja-der"></div>
+        <div class="ojo" id="ojo-der"></div>
+      </div>
+    </div>
+    <div class="boca-contenedor" id="bocaContenedor">
+      <div class="boca neutral" id="boca"></div>
+    </div>
+  </div>
+
+  <div id="estadoVoz">🎤 Diga "activar" para despertar a Che!Robot</div>
+  <div id="estadoMovimiento">📡 Esperando movimiento...</div>
+
+  <!-- Librerías externas -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+  <!-- Archivo JavaScript separado -->
+  <script src="script.js"></script>
+</body>
+</html>
