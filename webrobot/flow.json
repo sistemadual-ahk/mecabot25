@@ -1,11 +1,126 @@
 [
     {
-        "id": "d82a7116b4851b52",
+        "id": "7dc9f853183ef1fa",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
         "info": "",
         "env": []
+    },
+    {
+        "id": "72a481ab053e7661",
+        "type": "ui_tab",
+        "name": "Pañol",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9ea8277d9686b4e7",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f015403e2a2e3944",
+        "type": "ui_group",
+        "name": "Operaciones",
+        "tab": "72a481ab053e7661",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "fbfac11a65c4d030",
@@ -14,9 +129,9 @@
         "wholemsg": "false"
     },
     {
-        "id": "12179756106e6e7a",
+        "id": "1e440147a299c5d9",
         "type": "websocket in",
-        "z": "d82a7116b4851b52",
+        "z": "7dc9f853183ef1fa",
         "name": "WebSocket IN",
         "server": "fbfac11a65c4d030",
         "client": "",
@@ -24,15 +139,15 @@
         "y": 340,
         "wires": [
             [
-                "7798f95eb8f4940f",
-                "caea2205b2a6f5bc"
+                "f7d630271cb2138a",
+                "6fa5b56bc617fd58"
             ]
         ]
     },
     {
-        "id": "7798f95eb8f4940f",
+        "id": "f7d630271cb2138a",
         "type": "debug",
-        "z": "d82a7116b4851b52",
+        "z": "7dc9f853183ef1fa",
         "name": "Mensajes Recibidos",
         "active": true,
         "tosidebar": true,
@@ -47,9 +162,9 @@
         "wires": []
     },
     {
-        "id": "93c2d4b1a5b5c582",
+        "id": "741ea85dd5c0a3d1",
         "type": "http in",
-        "z": "d82a7116b4851b52",
+        "z": "7dc9f853183ef1fa",
         "name": "",
         "url": "/code",
         "method": "post",
@@ -59,16 +174,16 @@
         "y": 600,
         "wires": [
             [
-                "8d2b93b42db8810d",
-                "0242de28b81c0674",
-                "caea2205b2a6f5bc"
+                "76f4981b33c4820f",
+                "698b0873b53c1579",
+                "6fa5b56bc617fd58"
             ]
         ]
     },
     {
-        "id": "8d2b93b42db8810d",
+        "id": "76f4981b33c4820f",
         "type": "debug",
-        "z": "d82a7116b4851b52",
+        "z": "7dc9f853183ef1fa",
         "name": "debug 2",
         "active": true,
         "tosidebar": true,
@@ -82,9 +197,9 @@
         "wires": []
     },
     {
-        "id": "0242de28b81c0674",
+        "id": "698b0873b53c1579",
         "type": "http response",
-        "z": "d82a7116b4851b52",
+        "z": "7dc9f853183ef1fa",
         "name": "",
         "statusCode": "200",
         "headers": {},
@@ -93,11 +208,11 @@
         "wires": []
     },
     {
-        "id": "caea2205b2a6f5bc",
+        "id": "6fa5b56bc617fd58",
         "type": "function",
-        "z": "d82a7116b4851b52",
+        "z": "7dc9f853183ef1fa",
         "name": "function 2",
-        "func": "// Si el payload llega como string (caso WebSocket)\nif (typeof msg.payload === \"string\") {\n    let texto = msg.payload.toLowerCase();\n\n    if (texto === \"saludar\") {\n        msg.payload = \"*saludar*\";\n        return msg;\n    }\n    if (texto === \"adelante\") {\n        msg.payload = \"*avanzar*\";\n        return msg;\n    }\n    if (texto === \"atras\") {\n        msg.payload = \"*retroceder*\";\n        return msg;\n    }\n    if (texto === \"derecha\") {\n        msg.payload = \"*doblarD*\";\n        return msg;\n    }\n    if (texto === \"izquierda\") {\n        msg.payload = \"*doblarI*\";\n        return msg;\n    }\n    if (texto === \"bailar\") {\n        msg.payload = \"*bailar*\";\n        return msg;\n    }\n    if (texto === \"aplaudir\") {\n        msg.payload = \"*aplaudir*\";\n        return msg;\n    }\n    if (texto === \"culturista\") {\n        msg.payload = \"*culturista*\";\n        return msg;\n    }\n    if (texto === \"si\") {\n        msg.payload = \"*si*\";\n        return msg;\n    }\n    if (texto === \"no\") {\n        msg.payload = \"*no*\";\n        return msg;\n    }\n    if (texto === \"levantar brazo izquierdo\") {\n        msg.payload = \"*levbrazoizq*\";\n        return msg;\n    }\n    if (texto === \"bajar brazo izquierdo\") {\n        msg.payload = \"*bajabrazoizq*\";\n        return msg;\n    }\n    if (texto === \"levantar brazo derecho\") {\n        msg.payload = \"*levbrazoder*\";\n        return msg;\n    }\n    if (texto === \"bajar brazo derecho\") {\n        msg.payload = \"*bajbrazoder*\";\n        return msg;\n    }\n}\n\nreturn null; // no matcheó nada",
+        "func": "// Si el payload llega como string (caso WebSocket)\nif (typeof msg.payload === \"string\") {\n    let texto = msg.payload.toLowerCase();\n\n    if (texto === \"saludar\") {\n        msg.payload = \"*saludar*\";\n        return msg;\n    }\n    if (texto === \"adelante\") {\n        msg.payload = \"*avanzar*\";\n        return msg;\n    }\n    if (texto === \"atras\") {\n        msg.payload = \"*retroceder*\";\n        return msg;\n    }\n    if (texto === \"derecha\") {\n        msg.payload = \"*doblarD*\";\n        return msg;\n    }\n    if (texto === \"izquierda\") {\n        msg.payload = \"*doblarI*\";\n        return msg;\n    }\n    if (texto === \"bailar\") {\n        msg.payload = \"*bailar*\";\n        return msg;\n    }\n    if (texto === \"aplaudir\") {\n        msg.payload = \"*aplaudir*\";\n        return msg;\n    }\n    if (texto === \"culturista\") {\n        msg.payload = \"*culturista*\";\n        return msg;\n    }\n    if (texto === \"si\") {\n        msg.payload = \"*si*\";\n        return msg;\n    }\n    if (texto === \"no\") {\n        msg.payload = \"*no*\";\n        return msg;\n    }\n    if (texto === \"levantar cabeza\") {\n        msg.payload = \"*levantando cabeza*\";\n        return msg;\n    }\n    if (texto === \"bajar cabeza\") {\n        msg.payload = \"*bajando cabeza*\";\n        return msg;\n    }\n    if (texto === \"girar cabeza izq\") {\n        msg.payload = \"*girando cabeza a la izq*\";\n        return msg;\n    }\n    if (texto === \"girar cabeza der\") {\n        msg.payload = \"*girando cabeza a la der*\";\n        return msg;\n    }\n    if (texto === \"levantar brazo izquierdo\") {\n        msg.payload = \"*levbrazoizq*\";\n        return msg;\n    }\n    if (texto === \"bajar brazo izquierdo\") {\n        msg.payload = \"*bajabrazoizq*\";\n        return msg;\n    }\n    if (texto === \"levantar brazo derecho\") {\n        msg.payload = \"*levbrazoder*\";\n        return msg;\n    }\n    if (texto === \"bajar brazo derecho\") {\n        msg.payload = \"*bajbrazoder*\";\n        return msg;\n    }\n}\n\nreturn null; // no matcheó nada",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -108,14 +223,14 @@
         "y": 500,
         "wires": [
             [
-                "cd033bd7bcfda5e1"
+                "80ce939a7bc57a15"
             ]
         ]
     },
     {
-        "id": "cd033bd7bcfda5e1",
+        "id": "80ce939a7bc57a15",
         "type": "debug",
-        "z": "d82a7116b4851b52",
+        "z": "7dc9f853183ef1fa",
         "name": "debug 3",
         "active": true,
         "tosidebar": true,
@@ -127,5 +242,13 @@
         "x": 780,
         "y": 500,
         "wires": []
+    },
+    {
+        "id": "d198995f4531bba3",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
     }
 ]
