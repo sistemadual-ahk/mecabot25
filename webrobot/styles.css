@@ -176,6 +176,13 @@ h2 {
     display: block;
     margin-bottom: 5px;
 }
+/* Estilo para emojis dentro de .action: grandes y en bloque encima del texto */
+.action .emoji {
+    font-size: 32px; /* mismo tamaño que los íconos */
+    display: block;
+    margin-bottom: 5px;
+    line-height: 1; /* evita espacio extra */
+}
 .action:hover {
     transform: scale(1.05);
 }

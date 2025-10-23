@@ -45,16 +45,21 @@ document.getElementById("cerrar_pinzas_izq").addEventListener("pointerdown", () 
 document.getElementById("abrir_pinzas_der").addEventListener("pointerdown", () => enviarComando("abrir pinzas der"));
 document.getElementById("cerrar_pinzas_der").addEventListener("pointerdown", () => enviarComando("cerrar pinzas der"));
 
-
-document.getElementById("bailar").addEventListener("pointerdown", () => enviarComando("bailar"));
-document.getElementById("aplaudir").addEventListener("pointerdown", () => enviarComando("aplaudir"));
-document.getElementById("culturista").addEventListener("pointerdown", () => enviarComando("culturista"));
-document.getElementById("si").addEventListener("pointerdown", () => enviarComando("si"));
+document.getElementById("saludar").addEventListener("pointerdown", () => enviarComando("saludar"));
+document.getElementById("si").addEventListener("pointerdown", () => enviarComando("asentir"));
 document.getElementById("no").addEventListener("pointerdown", () => enviarComando("no"));
+document.getElementById("pensar").addEventListener("pointerdown", () => enviarComando("pensar"));
+document.getElementById("saludo_formal").addEventListener("pointerdown", () => enviarComando("apreton de pinzas"));
+document.getElementById("bailar").addEventListener("pointerdown", () => enviarComando("bailar"));
+document.getElementById("maso").addEventListener("pointerdown", () => enviarComando("mas o menos"));
+document.getElementById("macarena").addEventListener("pointerdown", () => enviarComando("macarena"));
+document.getElementById("selfie").addEventListener("pointerdown", () => enviarComando("selfie"));
+document.getElementById("egipcio").addEventListener("pointerdown", () => enviarComando("egipcio"));
+document.getElementById("robot").addEventListener("pointerdown", () => enviarComando("robot"));
 document.getElementById("stop").addEventListener("pointerdown", () => enviarComando("frenar"));
 // --- NUEVOS BOTONES VACÍOS ---
 document.getElementById("mate").addEventListener("pointerdown", () => enviarComando("mate"));
-document.getElementById("vacio2").addEventListener("pointerdown", () => enviarComando("vacio"));
+document.getElementById("boxeo").addEventListener("pointerdown", () => enviarComando("boxeo"));
 document.getElementById("vacio3").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio4").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio5").addEventListener("pointerdown", () => enviarComando("vacio"));
