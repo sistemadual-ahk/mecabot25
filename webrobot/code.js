@@ -64,5 +64,3 @@ document.getElementById("vacio3").addEventListener("pointerdown", () => enviarCo
 document.getElementById("vacio4").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio5").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio6").addEventListener("pointerdown", () => enviarComando("vacio"));
-
-

@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juega con Che!Robot</title>
+    <title>Juega con Che!Pibe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1><span class="emoji">🕹️</span>Mueve a Che!Robot</h1>
+        <h1>Mueve a Che!Pibe<span class="emoji">🕹️</span></h1>
         
         <div class="instructions">
-            <p>Cada flecha moverá a Che!Robot en una dirección diferente.</p>
+            <p>Cada flecha moverá a Che!Pibe en una dirección diferente.</p>
         </div>
         
         <div class="control-panel">
@@ -45,121 +45,147 @@
     </div>
 
     <div class="actions-container">
-        <h2><span class="emoji">💃</span>Haz que Che!Robot realice acciones</h2>
+        <h2>Haz que Che!Pibe realice acciones<span class="emoji">💃</span></h2>
 
         <div class="instructions2">
-            <p>Presione un cuadro de acción para que Che!Robot lo realice</p>
+            <p>Presione un cuadro de acción para que Che!Pibe lo realice</p>
         </div>
 
-        <div class="actions-container-blocks">
-            
-            <div class="action" id="lev_brazo_izq">
-                <h4><i class="fa-regular fa-circle-up"></i>Lev. Brazo Izq.</h4>
-            </div>
-            <div class="action" id="lev_brazo_der">
-                <h4><i class="fa-regular fa-circle-up"></i>Lev. Brazo Der.</h4>
-            </div>
-            <div class="action" id="baj_brazo_izq">
-                <h4><i class="fa-regular fa-circle-down"></i>Baj. Brazo Izq.</h4>
-            </div>
-            <div class="action" id="baj_brazo_der">
-                <h4><i class="fa-regular fa-circle-down"></i>Baj. Brazo Der.</h4>
-            </div>
-            <div class="action" id="flex_codo_izq">
-                <h4><i class="fa-solid fa-share"></i>Flex. Codo Izq.</h4>
-            </div>
-            <div class="action" id="flex_codo_der">
-                <h4><i class="fa-solid fa-reply"></i>Flex. Codo Der.</h4>
-            </div>
-            <div class="action" id="ext_codo_izq">
-                <h4><i class="fa-solid fa-reply"></i>Ext. Codo Izq.</h4>
-            </div>
-            <div class="action" id="ext_codo_der">
-                <h4><i class="fa-solid fa-share"></i>Ext. Codo Der.</h4>
-            </div>
+        <!-- Cada categoría ahora es su propio container separado -->
+        <div class="category-container" id="category-arms-container">
+                    <div class="actions-category" id="category-arms">
+                        <div class="actions-section" id="section-arms">
+                            <h3 class="category-title">Brazos y Manos<span class="emoji">🦾</span></h3>
+                            <div class="actions-section-blocks">
+                                <div class="action" id="lev_brazo_izq">
+                                    <h4><i class="fa-regular fa-circle-up"></i>Lev. Brazo Izq.</h4>
+                                </div>
+                                <div class="action" id="lev_brazo_der">
+                                    <h4><i class="fa-regular fa-circle-up"></i>Lev. Brazo Der.</h4>
+                                </div>
+                                <div class="action" id="baj_brazo_izq">
+                                    <h4><i class="fa-regular fa-circle-down"></i>Baj. Brazo Izq.</h4>
+                                </div>
+                                <div class="action" id="baj_brazo_der">
+                                    <h4><i class="fa-regular fa-circle-down"></i>Baj. Brazo Der.</h4>
+                                </div>
+                                <div class="action" id="flex_codo_izq">
+                                    <h4><i class="fa-solid fa-share"></i>Flex. Codo Izq.</h4>
+                                </div>
+                                <div class="action" id="flex_codo_der">
+                                    <h4><i class="fa-solid fa-reply"></i>Flex. Codo Der.</h4>
+                                </div>
+                                <div class="action" id="ext_codo_izq">
+                                    <h4><i class="fa-solid fa-reply"></i>Ext. Codo Izq.</h4>
+                                </div>
+                                <div class="action" id="ext_codo_der">
+                                    <h4><i class="fa-solid fa-share"></i>Ext. Codo Der.</h4>
+                                </div>
+                                <div class="action" id="abrir_pinzas_izq">
+                                    <h4><span class="emoji">✋</span>Abrir Pinzas Izq.</h4>
+                                </div>
+                                <div class="action" id="abrir_pinzas_der">
+                                    <h4><span class="emoji">✋</span>Abrir Pinzas Der.</h4>
+                                </div>
+                                <div class="action" id="cerrar_pinzas_izq">
+                                    <h4><span class="emoji">✊</span>Cerrar Pinzas Izq.</h4>
+                                </div>
+                                <div class="action" id="cerrar_pinzas_der">
+                                    <h4><span class="emoji">✊</span>Cerrar Pinzas Der.</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="action" id="levantar_cabeza">
-                <h4><i class="fa-solid fa-caret-up"></i><span class="emoji">🤖</span></i>Levantar Cabeza</h4>
-            </div>
-            <div class="action" id="bajar_cabeza">
-                <h4><span class="emoji">🤖</span><i class="fa-solid fa-caret-down"></i>Bajar Cabeza </h4>
-            </div>
-            <div class="action" id="girar_cabeza_izq">
-                <h4><i class="fa-solid fa-caret-left"></i><span class="emoji">🤖</span></i>Girar Cabeza Izq.</h4>
-            </div>
-            <div class="action" id="girar_cabeza_der">
-                <h4><i class="fa-solid fa-caret-right"></i><span class="emoji">🤖</span></i>Girar Cabeza Der.</h4>
-            </div>
-            <div class="action" id="abrir_pinzas_izq">
-                <h4><span class="emoji">✋</span>Abrir Pinzas Izq.</h4>
-            </div>
-            <div class="action" id="abrir_pinzas_der">
-                <h4><span class="emoji">✋</span>Abrir Pinzas Der.</h4>
-            </div>
-            <div class="action" id="cerrar_pinzas_izq">
-                <h4><span class="emoji">✊</span>Cerrar Pinzas Izq.</h4>
-            </div>
-            <div class="action" id="cerrar_pinzas_der">
-                <h4><span class="emoji">✊</span>Cerrar Pinzas Der.</h4>
-            </div>
+                <div class="category-container" id="category-head-container">
+                    <div class="actions-category" id="category-head">
+                        <div class="actions-section" id="section-head">
+                            <h3 class="category-title">Cabeza<span class="emoji">🤖</span></h3>
+                            <div class="actions-section-blocks">
+                                <div class="action" id="levantar_cabeza">
+                                    <h4><i class="fa-solid fa-caret-up"></i><span class="emoji">🤖</span>Levantar Cabeza</h4>
+                                </div>
+                                <div class="action" id="bajar_cabeza">
+                                    <h4><span class="emoji">🤖</span><i class="fa-solid fa-caret-down"></i>Bajar Cabeza </h4>
+                                </div>
+                                <div class="action" id="girar_cabeza_izq">
+                                    <h4><i class="fa-solid fa-caret-left"></i><span class="emoji">🤖</span>Girar Cabeza Izq.</h4>
+                                </div>
+                                <div class="action" id="girar_cabeza_der">
+                                    <h4><i class="fa-solid fa-caret-right"></i><span class="emoji">🤖</span>Girar Cabeza Der.</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="action" id="saludar">
-                <h5><span class="emoji">👋😊</span>Hola!</h5>
-            </div>
-            <div class="action" id="pensar">
-                <h5><span class="emoji">🤔</span>Pensar</h5>
-            </div>
-            <div class="action" id="maso">
-                <h5><span class="emoji">😅</span>Más o Menos</h5>
-            </div>
+                <div class="category-container" id="category-gestures-container">
+                    <div class="actions-category" id="category-gestures">
+                        <div class="actions-section" id="section-gestures">
+                            <h3 class="category-title">Poses Predeterminadas<span class="emoji">🧉</span></h3>
+                            <div class="actions-section-blocks">
+                                <div class="action" id="saludar">
+                                    <h5><span class="emoji">👋😊</span>Hola!</h5>
+                                </div>
+                                <div class="action" id="pensar">
+                                    <h5><span class="emoji">🤔</span>Pensar</h5>
+                                </div>
+                                <div class="action" id="maso">
+                                    <h5><span class="emoji">😅</span>Más o Menos</h5>
+                                </div>
 
-            <div class="action" id="si">
-                <h6><span class="emoji">😄</span>Asentir</h6>
-            </div>
+                                <div class="action" id="si">
+                                    <h6><span class="emoji">😄</span>Asentir</h6>
+                                </div>
 
-            <div class="action" id="no">
-                <h6><span class="emoji">🙅</span>Negar</h6>
-            </div>
-            <div class="action" id="saludo_formal">
-                <h5><span class="emoji">🤝</span>Apretón de Pinzas</h5>
-            </div>
-            <div class="action" id="mate">
-                <h6><span class="emoji">🧉</span>Matezuli</h6>
-            </div>
-            <div class="action" id="bailar">
-                <h4><span class="emoji">🎶</span>Bailá CheRobot!</h4>
-            </div>
-            <div class="action" id="macarena">
-                <h5><span class="emoji">💃</span>Hacer la Macarena</h5>
-            </div>
-            <div class="action" id="selfie">
-                <h4><span class="emoji">🤳🏻</span>Wiskiii!</h4>
-            </div>
-            <div class="action" id="egipcio">
-                <h4><span class="emoji">⚱️</span>Haz el Egipcio!</h4>
-            </div>
-            <div class="action" id="robot">
-                <h5><span class="emoji">🗿</span>Haz el Robot!</h5>
-            </div>
+                                <div class="action" id="no">
+                                    <h6><span class="emoji">🙅</span>Negar</h6>
+                                </div>
+                                <div class="action" id="saludo_formal">
+                                    <h5><span class="emoji">🤝</span>Apretón de Pinzas</h5>
+                                </div>
+                                <div class="action" id="mate">
+                                    <h6><span class="emoji">🧉</span>Matezuli</h6>
+                                </div>
+                                <div class="action" id="bailar">
+                                    <h4><span class="emoji">🎶</span>Bailá CheRobot!</h4>
+                                </div>
+                                <div class="action" id="macarena">
+                                    <h5><span class="emoji">💃</span>Hacer la Macarena</h5>
+                                </div>
+                                <div class="action" id="selfie">
+                                    <h4><span class="emoji">🤳🏻</span>Wiskiii!</h4>
+                                </div>
+                                <div class="action" id="egipcio">
+                                    <h4><span class="emoji">⚱️</span>Haz el Egipcio!</h4>
+                                </div>
+                                <div class="action" id="robot">
+                                    <h5><span class="emoji">🗿</span>Haz el Robot!</h5>
+                                </div>
 
-            <div class="action" id="boxeo">
-                <h6><span class="emoji">🥊👊</span>A las ñapis</h6> 
-            </div>
+                                <div class="action" id="boxeo">
+                                    <h6><span class="emoji">🥊👊</span>A las ñapis</h6> 
+                                </div>
 
-            <div class="action" id="vacio3">
-                <h8><i class="fa-solid fa-ban"></i>Vacío</h8>
-            </div>
+                                <div class="action" id="vacio3">
+                                    <h8><i class="fa-solid fa-ban"></i>Vacío</h8>
+                                </div>
 
-            <div class="action" id="vacio4">
-                <h8><i class="fa-solid fa-ban"></i>Vacío</h8>
-            </div>
-            
-            <div class="action" id="vacio5">
-                <h8><i class="fa-solid fa-ban"></i>Vacío</h8>
-            </div>
-            <div class="action" id="vacio6">
-                <h8><i class="fa-solid fa-ban"></i>Vacío</h8>
-            </div>
+                                <div class="action" id="vacio4">
+                                    <h8><i class="fa-solid fa-ban"></i>Vacío</h8>
+                                </div>
+                    
+                                <div class="action" id="vacio5">
+                                    <h8><i class="fa-solid fa-ban"></i>Vacío</h8>
+                                </div>
+                                <div class="action" id="vacio6">
+                                    <h8><i class="fa-solid fa-ban"></i>Vacío</h8>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
     <script src="code.js"></script>
