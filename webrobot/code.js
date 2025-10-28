@@ -67,9 +67,10 @@ document.getElementById("stop").addEventListener("pointerdown", () => enviarComa
 // --- NUEVOS BOTONES VACÍOS ---
 document.getElementById("mate").addEventListener("pointerdown", () => enviarComando("mate"));
 document.getElementById("boxeo").addEventListener("pointerdown", () => enviarComando("boxeo"));
-document.getElementById("vacio3").addEventListener("pointerdown", () => enviarComando("vacio"));
+document.getElementById("reset").addEventListener("pointerdown", () => enviarComando("reset"));
 document.getElementById("vacio4").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio5").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio6").addEventListener("pointerdown", () => enviarComando("vacio"));
+
 
 
