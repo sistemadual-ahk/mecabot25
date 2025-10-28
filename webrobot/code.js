@@ -2,7 +2,6 @@
 // Por defecto Node-RED expone ws://localhost:1880/ws/<path>
 const socket = new WebSocket("ws://192.168.2.150:1880/ws/code");
 
-
 // Evento: cuando se abre la conexión
 socket.onopen = () => {
   console.log("Conectado al servidor WebSocket");
@@ -13,19 +12,23 @@ socket.onerror = (error) => {
   console.error("Error en WebSocket:", error);
 };
 
+// Evento: cuando Node-RED envía una respuesta
+socket.onmessage = (event) => {
+  console.log("Mensaje recibido desde Node-RED:", event.data);
+};
+
 // Función para enviar el comando
 function enviarComando(comando) {
- if (socket.readyState === WebSocket.OPEN) {
+  if (socket.readyState === WebSocket.OPEN) {
+    // 🔹 Node-RED espera que el JSON tenga la estructura { payload: { comando: "..." } }
     socket.send(JSON.stringify({ payload: { comando } }));
-
-    console.log("Enviado:", comando);
-
     console.log("Enviado:", comando);
   } else {
     console.error("El WebSocket no está conectado");
   }
 }
-// Asignar eventos a cada flecha
+
+// Asignar eventos a cada botón
 document.getElementById("up").addEventListener("pointerdown", () => enviarComando("adelante"));
 document.getElementById("down").addEventListener("pointerdown", () => enviarComando("atras"));
 document.getElementById("left").addEventListener("pointerdown", () => enviarComando("izquierda"));
@@ -61,15 +64,13 @@ document.getElementById("selfie").addEventListener("pointerdown", () => enviarCo
 document.getElementById("egipcio").addEventListener("pointerdown", () => enviarComando("egipcio"));
 document.getElementById("robot").addEventListener("pointerdown", () => enviarComando("robot"));
 document.getElementById("stop").addEventListener("pointerdown", () => enviarComando("frenar"));
+
 // --- NUEVOS BOTONES VACÍOS ---
 document.getElementById("mate").addEventListener("pointerdown", () => enviarComando("mate"));
 document.getElementById("boxeo").addEventListener("pointerdown", () => enviarComando("boxeo"));
 document.getElementById("vacio3").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio4").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio5").addEventListener("pointerdown", () => enviarComando("vacio"));
-
 document.getElementById("vacio6").addEventListener("pointerdown", () => enviarComando("vacio"));
-
-
 
 
