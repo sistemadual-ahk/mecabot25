@@ -16,7 +16,8 @@ socket.onerror = (error) => {
 // Función para enviar el comando
 function enviarComando(comando) {
  if (socket.readyState === WebSocket.OPEN) {
-    socket.send(JSON.stringify({ comando }));
+    socket.send(JSON.stringify({ payload: { comando } }));
+
     console.log("Enviado:", comando);
 
     console.log("Enviado:", comando);
@@ -68,6 +69,7 @@ document.getElementById("vacio4").addEventListener("pointerdown", () => enviarCo
 document.getElementById("vacio5").addEventListener("pointerdown", () => enviarComando("vacio"));
 
 document.getElementById("vacio6").addEventListener("pointerdown", () => enviarComando("vacio"));
+
 
 
 
