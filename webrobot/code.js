@@ -1,5 +1,4 @@
 // Crear conexión WebSocket con Node-RED
-// Por defecto Node-RED expone ws://localhost:1880/ws/<path>
 const socket = new WebSocket("ws://192.168.2.150:1880/ws/code");
 
 // Evento: cuando se abre la conexión
@@ -20,9 +19,9 @@ socket.onmessage = (event) => {
 // Función para enviar el comando
 function enviarComando(comando) {
   if (socket.readyState === WebSocket.OPEN) {
-    // 🔹 Node-RED espera que el JSON tenga la estructura { payload: { comando: "..." } }
-    socket.send(JSON.stringify({ payload: { comando } }));
-    console.log("Enviado:", comando);
+    // 🔹 Enviar estructura { comando: "..." } dentro de msg.payload
+    socket.send(JSON.stringify({ comando }));
+    console.log("Enviado comando:", comando);
   } else {
     console.error("El WebSocket no está conectado");
   }
