@@ -1,5 +1,5 @@
 // Crear conexión WebSocket con Node-RED
-const socket = new WebSocket("ws://192.168.2.150:1880/ws/code");
+const socket = new WebSocket("ws://192.168.2.150:1880//ws/code");
 
 // Evento: cuando se abre la conexión
 socket.onopen = () => {
@@ -67,10 +67,8 @@ document.getElementById("stop").addEventListener("pointerdown", () => enviarComa
 // --- NUEVOS BOTONES VACÍOS ---
 document.getElementById("mate").addEventListener("pointerdown", () => enviarComando("mate"));
 document.getElementById("boxeo").addEventListener("pointerdown", () => enviarComando("boxeo"));
-document.getElementById("reset").addEventListener("pointerdown", () => enviarComando("reset"));
+document.getElementById("home").addEventListener("pointerdown", () => enviarComando("home"));
 document.getElementById("vacio4").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio5").addEventListener("pointerdown", () => enviarComando("vacio"));
 document.getElementById("vacio6").addEventListener("pointerdown", () => enviarComando("vacio"));
-
-
 

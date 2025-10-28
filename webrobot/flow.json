@@ -1,6 +1,6 @@
 [
     {
-        "id": "7ef250805f80ceaf",
+        "id": "26a621a2e6796888",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
@@ -129,9 +129,9 @@
         "wholemsg": "false"
     },
     {
-        "id": "d1377db4d00aa4a7",
+        "id": "7efde071d91db0a2",
         "type": "websocket in",
-        "z": "7ef250805f80ceaf",
+        "z": "26a621a2e6796888",
         "name": "WebSocket IN",
         "server": "fbfac11a65c4d030",
         "client": "",
@@ -139,15 +139,15 @@
         "y": 340,
         "wires": [
             [
-                "f4e20b0b94c6076c",
-                "047170e6daac8818"
+                "144b6fe1ca1ddb7c",
+                "ab2e1fa53fb0c7db"
             ]
         ]
     },
     {
-        "id": "f4e20b0b94c6076c",
+        "id": "144b6fe1ca1ddb7c",
         "type": "debug",
-        "z": "7ef250805f80ceaf",
+        "z": "26a621a2e6796888",
         "name": "Mensajes Recibidos",
         "active": true,
         "tosidebar": true,
@@ -162,9 +162,9 @@
         "wires": []
     },
     {
-        "id": "011ff0b101b777d4",
+        "id": "0cf7af8fe5daa85d",
         "type": "http in",
-        "z": "7ef250805f80ceaf",
+        "z": "26a621a2e6796888",
         "name": "",
         "url": "/code",
         "method": "post",
@@ -174,16 +174,16 @@
         "y": 600,
         "wires": [
             [
-                "e026a571e06be453",
-                "b6816c9817a1558f",
-                "047170e6daac8818"
+                "e6ef087a2d1dab56",
+                "366c397986119ec6",
+                "ab2e1fa53fb0c7db"
             ]
         ]
     },
     {
-        "id": "e026a571e06be453",
+        "id": "e6ef087a2d1dab56",
         "type": "debug",
-        "z": "7ef250805f80ceaf",
+        "z": "26a621a2e6796888",
         "name": "debug 2",
         "active": true,
         "tosidebar": true,
@@ -197,9 +197,9 @@
         "wires": []
     },
     {
-        "id": "b6816c9817a1558f",
+        "id": "366c397986119ec6",
         "type": "http response",
-        "z": "7ef250805f80ceaf",
+        "z": "26a621a2e6796888",
         "name": "",
         "statusCode": "200",
         "headers": {},
@@ -208,11 +208,11 @@
         "wires": []
     },
     {
-        "id": "047170e6daac8818",
+        "id": "ab2e1fa53fb0c7db",
         "type": "function",
-        "z": "7ef250805f80ceaf",
+        "z": "26a621a2e6796888",
         "name": "function 2",
-        "func": "// Si el payload llega como string (caso WebSocket)\nif (typeof msg.payload === \"string\") {\n    let texto = msg.payload.toLowerCase();\n\n    if (texto === \"saludar\") {\n        msg.payload = \"*saludooo*\";\n        return msg;\n    }\n    if (texto === \"adelante\") {\n        msg.payload = \"*avanzar*\";\n        return msg;\n    }\n    if (texto === \"atras\") {\n        msg.payload = \"*retroceder*\";\n        return msg;\n    }\n    if (texto === \"derecha\") {\n        msg.payload = \"*doblarD*\";\n        return msg;\n    }\n    if (texto === \"izquierda\") {\n        msg.payload = \"*doblarI*\";\n        return msg;\n    }\n    if (texto === \"bailar\") {\n        msg.payload = \"*bailar*\";\n        return msg;\n    }\n    if (texto === \"frenar\") {\n        msg.payload = \"*deteniendo el movimiento del robot*\";\n        return msg;\n    }\n    if (texto === \"mas o menos\") {\n        msg.payload = \"*hacer gesto de mas o menos*\";\n        return msg;\n    }\n    if (texto === \"apreton de pinzas\") {\n        msg.payload = \"*dar la mano*\";\n        return msg;\n    }\n    if (texto === \"asentir\") {\n        msg.payload = \"*asentir con la cabeza*\";\n        return msg;\n    }\n    if (texto === \"no\") {\n        msg.payload = \"*negar con la cabeza*\";\n        return msg;\n    }\n    if (texto === \"levantar cabeza\") {\n        msg.payload = \"*levantando cabeza*\";\n        return msg;\n    }\n    if (texto === \"bajar cabeza\") {\n        msg.payload = \"*bajando cabeza*\";\n        return msg;\n    }\n    if (texto === \"girar cabeza izq\") {\n        msg.payload = \"*girando cabeza a la izq*\";\n        return msg;\n    }\n    if (texto === \"girar cabeza der\") {\n        msg.payload = \"*girando cabeza a la der*\";\n        return msg;\n    }\n    if (texto === \"levantar brazo izquierdo\") {\n        msg.payload = \"*levbrazoizq*\";\n        return msg;\n    }\n    if (texto === \"bajar brazo izquierdo\") {\n        msg.payload = \"*bajabrazoizq*\";\n        return msg;\n    }\n    if (texto === \"levantar brazo derecho\") {\n        msg.payload = \"*levbrazoder*\";\n        return msg;\n    }\n    if (texto === \"bajar brazo derecho\") {\n        msg.payload = \"*bajbrazoder*\";\n        return msg;\n    }\n    if (texto === \"flex codo izq\") {\n        msg.payload = \"*flexionar el codo izquierdo*\";\n        return msg;\n    }\n    if (texto === \"flex codo der\") {\n        msg.payload = \"*flexionar el codo derecho*\";\n        return msg;\n    }\n    if (texto === \"ext codo izq\") {\n        msg.payload = \"*extender codo izquierdo*\";\n        return msg;\n    }\n    if (texto === \"ext codo der\") {\n        msg.payload = \"*extender codo derecho*\";\n        return msg;\n    }\n    if (texto === \"abrir pinzas izq\") {\n        msg.payload = \"*abriendo pinzas izq*\";\n        return msg;\n    }\n    if (texto === \"cerrar pinzas izq\") {\n        msg.payload = \"*cerrando pinzas izq*\";\n        return msg;\n    }\n    if (texto === \"abrir pinzas der\") {\n        msg.payload = \"*abriendo pinzas der*\";\n        return msg;\n    }\n    if (texto === \"cerrar pinzas der\") {\n        msg.payload = \"*cerrando pinzas der*\";\n        return msg;\n    }\n    if (texto === \"macarena\") {\n        msg.payload = \"*bailando la macarena*\";\n        return msg;\n    }\n    if (texto === \"selfie\") {\n        msg.payload = \"*tomandonos una selfie*\";\n        return msg;\n    }\n    if (texto === \"egipcio\") {\n        msg.payload = \"*haciendo el egipcio*\";\n        return msg;\n    }\n    if (texto === \"robot\") {\n        msg.payload = \"*haciendo el robot*\";\n        return msg;\n    }\n    if (texto === \"pensar\") {\n        msg.payload = \"*realizando el acto de pensar*\";\n        return msg;\n    }\n    if (texto === \"mate\") {\n        msg.payload = \"*preparando matienzo*\";\n        return msg;\n    }\n    if (texto === \"boxeo\") {\n        msg.payload = \"*te corto todo ameo*\";\n        return msg;\n    }\n}\n\nreturn null; // no matcheó nada",
+        "func": "// Si el payload llega como string (caso WebSocket)\nif (typeof msg.payload === \"string\") {\n    let texto = msg.payload.toLowerCase();\n\n    if (texto === \"saludar\") {\n        msg.payload = \"*saludooo*\";\n        return msg;\n    }\n    if (texto === \"adelante\") {\n        msg.payload = \"*avanzar*\";\n        return msg;\n    }\n    if (texto === \"atras\") {\n        msg.payload = \"*retroceder*\";\n        return msg;\n    }\n        if (texto === \"home\") {\n        msg.payload = \"*mandando a robotimba a home*\";\n        return msg;\n    }\n    if (texto === \"derecha\") {\n        msg.payload = \"*doblarD*\";\n        return msg;\n    }\n    if (texto === \"izquierda\") {\n        msg.payload = \"*doblarI*\";\n        return msg;\n    }\n    if (texto === \"bailar\") {\n        msg.payload = \"*bailar*\";\n        return msg;\n    }\n    if (texto === \"frenar\") {\n        msg.payload = \"*deteniendo el movimiento del robot*\";\n        return msg;\n    }\n    if (texto === \"mas o menos\") {\n        msg.payload = \"*hacer gesto de mas o menos*\";\n        return msg;\n    }\n    if (texto === \"apreton de pinzas\") {\n        msg.payload = \"*dar la mano*\";\n        return msg;\n    }\n    if (texto === \"asentir\") {\n        msg.payload = \"*asentir con la cabeza*\";\n        return msg;\n    }\n    if (texto === \"no\") {\n        msg.payload = \"*negar con la cabeza*\";\n        return msg;\n    }\n    if (texto === \"levantar cabeza\") {\n        msg.payload = \"*levantando cabeza*\";\n        return msg;\n    }\n    if (texto === \"bajar cabeza\") {\n        msg.payload = \"*bajando cabeza*\";\n        return msg;\n    }\n    if (texto === \"girar cabeza izq\") {\n        msg.payload = \"*girando cabeza a la izq*\";\n        return msg;\n    }\n    if (texto === \"girar cabeza der\") {\n        msg.payload = \"*girando cabeza a la der*\";\n        return msg;\n    }\n    if (texto === \"levantar brazo izquierdo\") {\n        msg.payload = \"*levbrazoizq*\";\n        return msg;\n    }\n    if (texto === \"bajar brazo izquierdo\") {\n        msg.payload = \"*bajabrazoizq*\";\n        return msg;\n    }\n    if (texto === \"levantar brazo derecho\") {\n        msg.payload = \"*levbrazoder*\";\n        return msg;\n    }\n    if (texto === \"bajar brazo derecho\") {\n        msg.payload = \"*bajbrazoder*\";\n        return msg;\n    }\n    if (texto === \"flex codo izq\") {\n        msg.payload = \"*flexionar el codo izquierdo*\";\n        return msg;\n    }\n    if (texto === \"flex codo der\") {\n        msg.payload = \"*flexionar el codo derecho*\";\n        return msg;\n    }\n    if (texto === \"ext codo izq\") {\n        msg.payload = \"*extender codo izquierdo*\";\n        return msg;\n    }\n    if (texto === \"ext codo der\") {\n        msg.payload = \"*extender codo derecho*\";\n        return msg;\n    }\n    if (texto === \"abrir pinzas izq\") {\n        msg.payload = \"*abriendo pinzas izq*\";\n        return msg;\n    }\n    if (texto === \"cerrar pinzas izq\") {\n        msg.payload = \"*cerrando pinzas izq*\";\n        return msg;\n    }\n    if (texto === \"abrir pinzas der\") {\n        msg.payload = \"*abriendo pinzas der*\";\n        return msg;\n    }\n    if (texto === \"cerrar pinzas der\") {\n        msg.payload = \"*cerrando pinzas der*\";\n        return msg;\n    }\n    if (texto === \"macarena\") {\n        msg.payload = \"*bailando la macarena*\";\n        return msg;\n    }\n    if (texto === \"selfie\") {\n        msg.payload = \"*tomandonos una selfie*\";\n        return msg;\n    }\n    if (texto === \"egipcio\") {\n        msg.payload = \"*haciendo el egipcio*\";\n        return msg;\n    }\n    if (texto === \"robot\") {\n        msg.payload = \"*haciendo el robot*\";\n        return msg;\n    }\n    if (texto === \"pensar\") {\n        msg.payload = \"*realizando el acto de pensar*\";\n        return msg;\n    }\n    if (texto === \"mate\") {\n        msg.payload = \"*preparando matienzo*\";\n        return msg;\n    }\n    if (texto === \"boxeo\") {\n        msg.payload = \"*te corto todo ameo*\";\n        return msg;\n    }\n}\n\nreturn null; // no matcheó nada",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -223,14 +223,14 @@
         "y": 500,
         "wires": [
             [
-                "5a8ee572b68a2b17"
+                "ee207fe1d74030f5"
             ]
         ]
     },
     {
-        "id": "5a8ee572b68a2b17",
+        "id": "ee207fe1d74030f5",
         "type": "debug",
-        "z": "7ef250805f80ceaf",
+        "z": "26a621a2e6796888",
         "name": "debug 3",
         "active": true,
         "tosidebar": true,
@@ -244,7 +244,7 @@
         "wires": []
     },
     {
-        "id": "cd432f1deef7f595",
+        "id": "5f8ddc5f4e24f704",
         "type": "global-config",
         "env": [],
         "modules": {
