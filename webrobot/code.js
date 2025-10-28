@@ -16,7 +16,8 @@ socket.onerror = (error) => {
 // Función para enviar el comando
 function enviarComando(comando) {
   if (socket.readyState === WebSocket.OPEN) {
-    socket.send(comando);
+     socket.send(JSON.stringify({ comando }));
+;
     console.log("Enviado:", comando);
   } else {
     console.error("El WebSocket no está conectado");
@@ -66,4 +67,5 @@ document.getElementById("vacio4").addEventListener("pointerdown", () => enviarCo
 document.getElementById("vacio5").addEventListener("pointerdown", () => enviarComando("vacio"));
 
 document.getElementById("vacio6").addEventListener("pointerdown", () => enviarComando("vacio"));
+
 
