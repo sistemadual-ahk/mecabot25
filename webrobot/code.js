@@ -1,6 +1,6 @@
 // Crear conexión WebSocket con Node-RED
 // Por defecto Node-RED expone ws://localhost:1880/ws/<path>
-const socket = new WebSocket("ws://127.0.0.1:1880/ws/code");
+const socket = new WebSocket("ws://192.168.2.150:1880/ws/code");
 
 // Evento: cuando se abre la conexión
 socket.onopen = () => {
