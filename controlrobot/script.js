@@ -525,7 +525,7 @@ const preguntasRespuestas = [
     respuesta: "Soy del club atletico boca juniors , TE FUISTE A LA B RIVER PLATE."
   },
   {
-    frases: ["¿Qué es la mecatronica?","Definicion de mecatronica"],
+    frases: ["¿Qué es la mecatronica?","definición de mecatronica"],
     respuesta: "La mecatrónica es la disciplina que integra mecánica, electrónica e informática para diseñar y construir productos inteligentes y sistemas automatizados, como la robótica."
   },
 ];
@@ -618,6 +618,7 @@ async function enviarPreguntaPersonalizada(pregunta){
       }, 500);
     }
 }
+
 
 
 
