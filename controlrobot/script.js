@@ -568,6 +568,11 @@ function procesarPreguntaAvanzada(texto) {
     return true;
   }
 
+   if (texto.includes("hola")) {
+    enviarComandoNodeRed("saludar");
+    return true;
+  
+
 
   // --- Respuestas predefinidas ---
   for (const item of preguntasRespuestas) {
@@ -618,6 +623,7 @@ async function enviarPreguntaPersonalizada(pregunta){
       }, 500);
     }
 }
+
 
 
 
