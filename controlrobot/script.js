@@ -509,7 +509,7 @@ const preguntasRespuestas = [
     respuesta: "Estoy aquí para ayudarte y acompañarte en lo que necesites."
   },
   {
-    frases: ["hola", "buen día", "buenos días", "buenas tardes", "buenas noches", "hola robot"],
+    frases: [ "buen día", "buenos días", "buenas tardes", "buenas noches", "hola robot"],
     respuesta: "¡Hola! ¿Cómo estás?"
   },
   {
@@ -569,6 +569,7 @@ function procesarPreguntaAvanzada(texto) {
   }
 
    if (texto.includes("hola")) {
+    hablar("¡Hola! ¿Cómo estás?");
     enviarComandoNodeRed("saludar");
     return true;
   
@@ -623,6 +624,7 @@ async function enviarPreguntaPersonalizada(pregunta){
       }, 500);
     }
 }
+
 
 
 
