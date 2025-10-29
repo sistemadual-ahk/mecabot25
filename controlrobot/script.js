@@ -562,6 +562,12 @@ function procesarPreguntaAvanzada(texto) {
     enviarComandoNodeRed("girar_izquierda");
     return true;
   }
+  if (texto.includes("robotina")) {
+    hablar("No me llamo Robotina lpm.");
+    enviarComandoNodeRed("boxeo");
+    return true;
+  }
+
 
   // --- Respuestas predefinidas ---
   for (const item of preguntasRespuestas) {
@@ -612,6 +618,7 @@ async function enviarPreguntaPersonalizada(pregunta){
       }, 500);
     }
 }
+
 
 
 
