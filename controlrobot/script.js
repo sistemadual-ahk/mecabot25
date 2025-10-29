@@ -551,6 +551,11 @@ function procesarPreguntaAvanzada(texto) {
     enviarComandoNodeRed("girar_derecha");
     return true;
   }
+  if (texto.includes("bailar")) {
+    hablar("Bailando nasi");
+    enviarComandoNodeRed("bailar");
+    return true;
+  }
 
   if (texto.includes("izquierda")) {
     hablar("Girando a la izquierda.");
@@ -607,6 +612,7 @@ async function enviarPreguntaPersonalizada(pregunta){
       }, 500);
     }
 }
+
 
 
 
