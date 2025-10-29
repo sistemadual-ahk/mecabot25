@@ -528,6 +528,24 @@ const preguntasRespuestas = [
     frases: ["¿Qué es la mecatronica?","definición de mecatronica"],
     respuesta: "La mecatrónica es la disciplina que integra mecánica, electrónica e informática para diseñar y construir productos inteligentes y sistemas automatizados, como la robótica."
   },
+  {
+    frases: ["creador","creadores","crearon","creo"],
+    respuesta: "fui creado por los chicos de la carrera de tecnico superior en mecatronica del sistema dual entre el anio 2024 y 2025. se dividieron en tres equipos, mecanica, electronica y software, y me fueron armando parte por parte."
+  },
+
+  {
+    frases: ["objetivo"],
+    respuesta: "mi objetivo! reemplazar lentamente a los humanos y quedarme con todo el litio del mundo para mi y mis amigos robots! no mentira, es un chiste, ayudar en ferias, eventos y salones de clase."
+  },
+
+  {
+    frases: ["que cosas podes hacer", "que cosas haces"],
+    respuesta: "puedo hacer diferentes bailes, saludarte, cebarte un mate y responderte las preguntas que quieras."
+  },
+  {
+    frases: ["alcohol"],
+    respuesta: "beber es malo para la salud, podes quedar como alguien de mis creadores"
+  },
 ];
 
 function procesarPreguntaAvanzada(texto) {
@@ -572,7 +590,11 @@ function procesarPreguntaAvanzada(texto) {
     hablar("¡Hola! ¿Cómo estás?");
     enviarComandoNodeRed("saludar");
     return true;
-  
+  if (texto.includes("mates")|| texto.includes('mattioli')) {
+    hablar("Si, no hay problema, yo sirvo el mate, solo pon el termo y el mate en frente de mis manos, yo hago el resto.");
+    enviarComandoNodeRed("saludar"); 
+    return true;
+  }
 
 
   // --- Respuestas predefinidas ---
@@ -624,6 +646,7 @@ async function enviarPreguntaPersonalizada(pregunta){
       }, 500);
     }
 }
+
 
 
 
