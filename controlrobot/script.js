@@ -646,12 +646,3 @@ async function enviarPreguntaPersonalizada(pregunta){
       }, 500);
     }
 }
-
-
-
-
-
-
-
-
-
