@@ -645,4 +645,5 @@ async function enviarPreguntaPersonalizada(pregunta){
         boca.className = 'boca neutral';
       }, 500);
     }
-}
+}}
+
