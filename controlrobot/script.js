@@ -649,7 +649,7 @@ function procesarPreguntaAvanzada(texto) {
   }
   if (texto.includes("mate")|| texto.includes("mattioli") ) {
     hablar("Si, no hay problema, yo sirvo el mate, solo pon el termo y el mate en frente de mis manos, yo hago el resto.");
-    enviarComandoNodeRed("servi_rmate"); 
+    enviarComandoNodeRed("servir_mate"); 
     return true;
   }
   if (texto.includes("festejar")|| texto.includes('festejo')) {
