@@ -56,13 +56,14 @@ document.getElementById("si").addEventListener("pointerdown", () => enviarComand
 document.getElementById("no").addEventListener("pointerdown", () => enviarComando("no"));
 document.getElementById("pensar").addEventListener("pointerdown", () => enviarComando("pensar"));
 document.getElementById("saludo_formal").addEventListener("pointerdown", () => enviarComando("apreton de pinzas"));
-document.getElementById("bailar").addEventListener("pointerdown", () => enviarComando("bailar"));
+document.getElementById("festejar").addEventListener("pointerdown", () => enviarComando("festejar"));
 document.getElementById("maso").addEventListener("pointerdown", () => enviarComando("mas o menos"));
 document.getElementById("macarena").addEventListener("pointerdown", () => enviarComando("macarena"));
 document.getElementById("selfie").addEventListener("pointerdown", () => enviarComando("selfie"));
-document.getElementById("egi").addEventListener("pointerdown", () => enviarComando("egipcio"));
-document.getElementById("robot").addEventListener("pointerdown", () => enviarComando("robot"));
+document.getElementById("dab").addEventListener("pointerdown", () => enviarComando("dab"));
+document.getElementById("robot").addEventListener("pointerdown", () => enviarComando("bailar"));
 document.getElementById("stop").addEventListener("pointerdown", () => enviarComando("frenar"));
+document.getElementById("asterisco").addEventListener("pointerdown", () => enviarComando("asterisco"));
 
 // --- NUEVOS BOTONES VACÍOS ---
 document.getElementById("mate").addEventListener("pointerdown", () => enviarComando("Servirmate"));
