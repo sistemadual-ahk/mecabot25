@@ -66,7 +66,7 @@ document.getElementById("stop").addEventListener("pointerdown", () => enviarComa
 document.getElementById("asterisco").addEventListener("pointerdown", () => enviarComando("asterisco"));
 
 // --- NUEVOS BOTONES VACÍOS ---
-document.getElementById("mate").addEventListener("pointerdown", () => enviarComando("Servirmate"));
+document.getElementById("mate").addEventListener("pointerdown", () => enviarComando("servir_mate"));
 document.getElementById("boxeo").addEventListener("pointerdown", () => enviarComando("boxeo"));
 document.getElementById("home").addEventListener("pointerdown", () => enviarComando("home"));
 document.getElementById("vacio4").addEventListener("pointerdown", () => enviarComando("vacio"));
