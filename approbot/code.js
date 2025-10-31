@@ -18,6 +18,7 @@ socket.onmessage = (event) => {
 
 // Función para enviar el comando
 function enviarComando(comando) {
+  console.log("Enviado comando:", comando);
   if (socket.readyState === WebSocket.OPEN) {
     // 🔹 Enviar estructura { comando: "..." } dentro de msg.payload
     socket.send(JSON.stringify({ comando }));
