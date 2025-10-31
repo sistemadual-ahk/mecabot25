@@ -19,7 +19,7 @@ socket.onmessage = (event) => {
 // Función para enviar el comando
 function enviarComando(comando) {
   if (socket.readyState === WebSocket.OPEN) {
-    socket.send(JSON.stringify({ comando }));
+    socket.send(comando);
     console.log("Enviado comando:", comando);
   } else {
     console.error("El WebSocket no está conectado");

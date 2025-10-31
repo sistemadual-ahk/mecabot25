@@ -171,10 +171,10 @@ const TIEMPO_SIN_CARA = 1000; // ms
 setInterval(() => {
   const ahora = Date.now();
   if (ahora - tiempoUltimaCara > TIEMPO_SIN_CARA) {
-    if (ultimaDireccion !== "stop") {
+    /*if (ultimaDireccion !== "stop") {
       enviarMovimiento("stop");
       ultimaDireccion = "stop";
-    }
+    }*/
     cara.style.transition = "transform 0.6s ease";
     ojoIzq.style.transform = "translate(0, 0)";
     ojoDer.style.transform = "translate(0, 0)";
