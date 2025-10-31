@@ -65,7 +65,7 @@ document.getElementById("robot").addEventListener("pointerdown", () => enviarCom
 document.getElementById("stop").addEventListener("pointerdown", () => enviarComando("frenar"));
 
 // --- NUEVOS BOTONES VACÍOS ---
-document.getElementById("mate").addEventListener("pointerdown", () => enviarComando("mate"));
+document.getElementById("mate").addEventListener("pointerdown", () => enviarComando("Servirmate"));
 document.getElementById("boxeo").addEventListener("pointerdown", () => enviarComando("boxeo"));
 document.getElementById("home").addEventListener("pointerdown", () => enviarComando("home"));
 document.getElementById("vacio4").addEventListener("pointerdown", () => enviarComando("vacio"));
