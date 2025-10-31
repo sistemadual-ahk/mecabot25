@@ -60,7 +60,7 @@ document.getElementById("bailar").addEventListener("pointerdown", () => enviarCo
 document.getElementById("maso").addEventListener("pointerdown", () => enviarComando("mas o menos"));
 document.getElementById("macarena").addEventListener("pointerdown", () => enviarComando("macarena"));
 document.getElementById("selfie").addEventListener("pointerdown", () => enviarComando("selfie"));
-document.getElementById("egipcio").addEventListener("pointerdown", () => enviarComando("egipcio"));
+document.getElementById("egi").addEventListener("pointerdown", () => enviarComando("egipcio"));
 document.getElementById("robot").addEventListener("pointerdown", () => enviarComando("robot"));
 document.getElementById("stop").addEventListener("pointerdown", () => enviarComando("frenar"));
 
