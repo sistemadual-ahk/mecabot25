@@ -104,7 +104,7 @@ function enviarComando(comando) {
   }
 }
 
-// Asignar eventos a cada botón (Solo los que existen en tu HTML)
+// Asignar eventos a cada botón 
 
 // Movimiento
 document.getElementById("up").addEventListener("pointerdown", () => enviarComando("adelante"));
@@ -113,26 +113,26 @@ document.getElementById("left").addEventListener("pointerdown", () => enviarComa
 document.getElementById("right").addEventListener("pointerdown", () => enviarComando("derecha"));
 
 // Brazos
-document.getElementById("lev_brazo_izq").addEventListener("pointerdown", () => enviarComando("levantar brazo izquierdo"));
-document.getElementById("baj_brazo_izq").addEventListener("pointerdown", () => enviarComando("bajar brazo izquierdo"));
-document.getElementById("lev_brazo_der").addEventListener("pointerdown", () => enviarComando("levantar brazo derecho"));
-document.getElementById("baj_brazo_der").addEventListener("pointerdown", () => enviarComando("bajar brazo derecho"));
+document.getElementById("lev_brazo_izq").addEventListener("pointerdown", () => enviarComando("levantar_brazo_izquierdo"));
+document.getElementById("baj_brazo_izq").addEventListener("pointerdown", () => enviarComando("bajar_brazo_izquierdo"));
+document.getElementById("lev_brazo_der").addEventListener("pointerdown", () => enviarComando("levantar_brazo_derecho"));
+document.getElementById("baj_brazo_der").addEventListener("pointerdown", () => enviarComando("bajar_brazo_derecho"));
 
 // Cabeza
-document.getElementById("levantar_cabeza").addEventListener("pointerdown", () => enviarComando("levantar cabeza"));
-document.getElementById("bajar_cabeza").addEventListener("pointerdown", () => enviarComando("bajar cabeza"));
-document.getElementById("girar_cabeza_izq").addEventListener("pointerdown", () => enviarComando("girar cabeza izq"));
-document.getElementById("girar_cabeza_der").addEventListener("pointerdown", () => enviarComando("girar cabeza der"));
+document.getElementById("levantar_cabeza").addEventListener("pointerdown", () => enviarComando("levantar_cabeza"));
+document.getElementById("bajar_cabeza").addEventListener("pointerdown", () => enviarComando("bajar_cabeza"));
+document.getElementById("girar_cabeza_izq").addEventListener("pointerdown", () => enviarComando("girar_cabeza_izq"));
+document.getElementById("girar_cabeza_der").addEventListener("pointerdown", () => enviarComando("girar_cabeza_der"));
 
 // Codos y Pinzas
-document.getElementById("flex_codo_izq").addEventListener("pointerdown", () => enviarComando("flex codo izq"));
-document.getElementById("flex_codo_der").addEventListener("pointerdown", () => enviarComando("flex codo der"));
-document.getElementById("ext_codo_izq").addEventListener("pointerdown", () => enviarComando("ext codo izq"));
-document.getElementById("ext_codo_der").addEventListener("pointerdown", () => enviarComando("ext codo der"));
-document.getElementById("abrir_pinzas_izq").addEventListener("pointerdown", () => enviarComando("abrir pinzas izq"));
-document.getElementById("cerrar_pinzas_izq").addEventListener("pointerdown", () => enviarComando("cerrar pinzas izq"));
-document.getElementById("abrir_pinzas_der").addEventListener("pointerdown", () => enviarComando("abrir pinzas der"));
-document.getElementById("cerrar_pinzas_der").addEventListener("pointerdown", () => enviarComando("cerrar pinzas der"));
+document.getElementById("flex_codo_izq").addEventListener("pointerdown", () => enviarComando("flex_codo_izq"));
+document.getElementById("flex_codo_der").addEventListener("pointerdown", () => enviarComando("flex_codo_der"));
+document.getElementById("ext_codo_izq").addEventListener("pointerdown", () => enviarComando("ext_codo_izq"));
+document.getElementById("ext_codo_der").addEventListener("pointerdown", () => enviarComando("ext_codo_der"));
+document.getElementById("abrir_pinzas_izq").addEventListener("pointerdown", () => enviarComando("abrir_pinzas_izq"));
+document.getElementById("cerrar_pinzas_izq").addEventListener("pointerdown", () => enviarComando("cerrar_pinzas_izq"));
+document.getElementById("abrir_pinzas_der").addEventListener("pointerdown", () => enviarComando("abrir_pinzas_der"));
+document.getElementById("cerrar_pinzas_der").addEventListener("pointerdown", () => enviarComando("cerrar_pinzas_der"));
 
 // Acciones Especiales (Limpiadas para que no falle el script)
 document.getElementById("saludar").addEventListener("pointerdown", () => enviarComando("saludo"));
