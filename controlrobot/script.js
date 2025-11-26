@@ -674,7 +674,7 @@ function procesarPreguntaAvanzada(texto) {
   // --- Comandos a Node-RED ---
   
   // 1. Verificamos si dijiste el nombre (Cherobot o Che robot)
-  const mencionaNombre = texto.includes("che robot") || texto.includes("robot");
+  //const mencionaNombre = texto.includes("che robot") || texto.includes("robot");
 
   if (mencionaNombre && texto.includes("saludar")|| texto.includes("saluda")) {
     hablar("¡Hola! Te saludo con mucho gusto.");
