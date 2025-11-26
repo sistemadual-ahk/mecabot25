@@ -603,7 +603,7 @@ function procesarPreguntaAvanzada(texto) {
     return true;
   }
 
-  // --- Comandos a Node-RED ---
+  /*// --- Comandos a Node-RED ---
   if (texto.includes("saludar")) {
     hablar("¡Hola! Te saludo con mucho gusto.");
     enviarComandoNodeRed("saludar"); 
@@ -654,6 +654,74 @@ function procesarPreguntaAvanzada(texto) {
     return true;
   }
   if (texto.includes("festejar")|| texto.includes('festejo')) {
+    hablar("Dale, vamos a festejar");
+    enviarComandoNodeRed("festejar"); 
+    return true;
+  }*/
+
+  // --- Comandos a Node-RED ---
+  
+  // 1. Verificamos si dijiste el nombre (Cherobot o Che robot)
+  const mencionaNombre = texto.includes("cherobot") || texto.includes("che robot");
+
+  if (mencionaNombre && texto.includes("saludar")) {
+    hablar("¡Hola! Te saludo con mucho gusto.");
+    enviarComandoNodeRed("saludar"); 
+    return true;
+  }
+
+  if (mencionaNombre && texto.includes("derecha")) {
+    hablar("Girando a la derecha.");
+    enviarComandoNodeRed("derecha");
+    return true;
+  }
+
+  if (mencionaNombre && texto.includes("bailar")) {
+    hablar("Con mucho gusto te muestro mis pasos robóticos");
+    enviarComandoNodeRed("bailar");
+    return true;
+  }
+
+  if (mencionaNombre && texto.includes("izquierda")) {
+    hablar("Girando a la izquierda.");
+    enviarComandoNodeRed("izquierda");
+    return true;
+  }
+
+  if (mencionaNombre && texto.includes("asentir")) {
+    hablar("YES YES");
+    enviarComandoNodeRed("asentir");
+    return true;
+  }
+
+  if (mencionaNombre && texto.includes("negar")) {
+    hablar("NO NO");
+    enviarComandoNodeRed("no");
+    return true;
+  }
+
+  if (mencionaNombre && texto.includes("detener")) {
+    hablar("Ok, me detengo");
+    enviarComandoNodeRed("frenar");
+    return true;
+  }
+
+  // Nota: 'hola' suele estar repetido en la parte conversacional, 
+  // pero aquí fuerza el saludo físico si dices "Che robot hola"
+  if (mencionaNombre && texto.includes("hola")) {
+    hablar("¡Hola! ¿Cómo estás?");
+    enviarComandoNodeRed("saludar");
+    return true;
+  }
+
+  // Usamos paréntesis extra para que el nombre aplique a cualquiera de las dos opciones (mate o mattioli)
+  if (mencionaNombre && (texto.includes("mate") || texto.includes("mattioli"))) {
+    hablar("Si, no hay problema, yo sirvo el mate, solo pon el termo y el mate en frente de mis manos, yo hago el resto.");
+    enviarComandoNodeRed("servir_mate"); 
+    return true;
+  }
+
+  if (mencionaNombre && (texto.includes("festejar") || texto.includes('festejo'))) {
     hablar("Dale, vamos a festejar");
     enviarComandoNodeRed("festejar"); 
     return true;
