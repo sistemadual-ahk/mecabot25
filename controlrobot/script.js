@@ -662,9 +662,9 @@ function procesarPreguntaAvanzada(texto) {
   // --- Comandos a Node-RED ---
   
   // 1. Verificamos si dijiste el nombre (Cherobot o Che robot)
-  const mencionaNombre = texto.includes("cherobot") || texto.includes("che robot");
+  const mencionaNombre = texto.includes("che robot") || texto.includes("robot");
 
-  if (mencionaNombre && texto.includes("saludar")) {
+  if (mencionaNombre && texto.includes("saludar")|| texto.includes("saluda")) {
     hablar("¡Hola! Te saludo con mucho gusto.");
     enviarComandoNodeRed("saludar"); 
     return true;
@@ -714,7 +714,7 @@ function procesarPreguntaAvanzada(texto) {
     return true;
   }
 
-  // Usamos paréntesis extra para que el nombre aplique a cualquiera de las dos opciones (mate o mattioli)
+
   if (mencionaNombre && (texto.includes("mate") || texto.includes("mattioli"))) {
     hablar("Si, no hay problema, yo sirvo el mate, solo pon el termo y el mate en frente de mis manos, yo hago el resto.");
     enviarComandoNodeRed("servir_mate"); 
