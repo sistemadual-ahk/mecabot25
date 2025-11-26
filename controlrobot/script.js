@@ -395,6 +395,18 @@ recognition.onresult = (event) => {
 
   if (texto.includes("parar seguimiento") || texto.includes("parar de seguir rostro") || texto.includes("tracking off")) {
     seguimientoCaraActivo = false;
+
+  // --- NUEVO: Mandar al centro físico y visual ---
+    enviarMovimiento("centro"); // Manda la orden a Node-RED
+    ultimaDireccion = "centro"; // Actualiza el estado lógico
+    
+    // Opcional: Esto resetea también la cara en la pantalla (ojos al medio)
+    suavizadoOjoX = 0; 
+    suavizadoOjoY = 0;
+    ojoIzq.style.transform = "translate(0, 0)";
+    ojoDer.style.transform = "translate(0, 0)";
+    bocaContenedor.style.transform = "translate(0, 0)";
+    // --
     estadoMovimiento.textContent = "🔴 Seguimiento detenido";
     hablar("Dejé de seguir tu rostro.");
     return;
