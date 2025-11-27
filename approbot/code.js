@@ -75,7 +75,7 @@ document.getElementById("vacio5").addEventListener("pointerdown", () => enviarCo
 document.getElementById("vacio6").addEventListener("pointerdown", () => enviarComando("vacio"));
 */
 // Crear conexión WebSocket con Node-RED
-const socket = new WebSocket("ws://192.168.0.118:1880/ws/code");
+const socket = new WebSocket("ws://192.168.2.150:1880/ws/code");
 
 // Evento: cuando se abre la conexión
 socket.onopen = () => {
