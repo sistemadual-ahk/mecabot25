@@ -1,5 +1,5 @@
-const WEBHOOK_URL_NODE = "http://192.168.2.150:1880/comando";
-const WEBHOOK_URL_N8N = "http://192.168.2.150:5678/webhook/4b68e260-2817-4c8f-b3eb-e332e32ddfed";
+const WEBHOOK_URL_NODE = "http://192.168.0.118:1880/comando";
+const WEBHOOK_URL_N8N = "http://192.168.0.118:5678/webhook/4b68e260-2817-4c8f-b3eb-e332e32ddfed";
 
 
 const videoElement = document.getElementById('video');
@@ -725,8 +725,7 @@ function procesarPreguntaAvanzada(texto) {
     enviarComandoNodeRed("saludar");
     return true;
   }
-
-
+  
   if (mencionaNombre && (texto.includes("mate") || texto.includes("mattioli"))) {
     hablar("Si, no hay problema, yo sirvo el mate, solo pon el termo y el mate en frente de mis manos, yo hago el resto.");
     enviarComandoNodeRed("servir_mate"); 
