@@ -86,13 +86,19 @@ video {
   width: 200px;
   height: 12px;
   border-bottom: 10px solid rgb(0, 255, 255);
-  border-radius: 0;
+  border-radius: 0 0 60px 60px;
   transition: all 0.3s ease-in-out;
 }
 
 .neutral {
   border-bottom: 10px solid rgb(0, 229, 255);
   height: 12px;
+
+}
+.cara.activa .boca.neutral {
+  border-radius: 0 0 60px 60px; /* Curva suave */
+  height: 35px; /* Se hace más alta para formar la sonrisa */
+  border-bottom: 10px solid rgb(0, 255, 255);
 }
 
 .feliz {
@@ -177,3 +183,4 @@ video {
 .cara.modo-enojado .boca {
   border-bottom-color: red !important;
 }
+/*

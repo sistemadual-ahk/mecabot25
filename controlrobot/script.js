@@ -172,7 +172,7 @@ const TIEMPO_SIN_CARA = 1000; // ms
 setInterval(() => {
   const ahora = Date.now();
   if (ahora - tiempoUltimaCara > TIEMPO_SIN_CARA) {
-    if (ultimaDireccion !== "centro") {
+    if (seguimientoCaraActivo && ultimaDireccion !== "centro") {
       enviarMovimiento("centro");
       ultimaDireccion = "centro";
     }
@@ -291,6 +291,7 @@ faceMesh.onResults((results) => {
       cejaIzq.style.transform = `translate(${limX - 75}px, ${limY + cejaY}px) rotate(${rotIzq}deg)`;
       cejaDer.style.transform = `translate(${limX - 50}px, ${limY + cejaY}px) rotate(${rotDer}deg)`;
     }
+
   }
 });
 
@@ -386,14 +387,14 @@ recognition.onresult = (event) => {
   console.log("🗣️ Palabra detectada:", texto);
 
   // ✅ Comandos de movimiento tienen prioridad
-  if (texto.includes("comenzar a seguir rostro") || texto.includes("seguir rostro") || texto.includes("tracking on")) {
+  if (texto.includes("comenzar") || texto.includes("seguir") || texto.includes("tracking on")) {
     seguimientoCaraActivo = true;
     estadoMovimiento.textContent = "🟢 Siguiendo tu rostro";
     hablar("Comencé a seguir tu rostro.");
     return;
   }
 
-  if (texto.includes("parar seguimiento") || texto.includes("parar de seguir rostro") || texto.includes("tracking off")) {
+  if (texto.includes("parar") || texto.includes("parar de seguir rostro") || texto.includes("tracking off")) {
     seguimientoCaraActivo = false;
 
   // --- NUEVO: Mandar al centro físico y visual ---
@@ -428,10 +429,6 @@ recognition.onresult = (event) => {
   // ✅ Apagar seguimiento de rostro también
   seguimientoCaraActivo = false;
   ultimaDireccion = null; // limpia estado del movimiento
-
-  // ✅ Enviar stop a Node-RED (por las dudas quede un movimiento pendiente)
-  enviarMovimiento("stop");
-  enviarComandoNodeRed("detener"); // opcional si querés detener todo
 
   // ✅ Reset visual
   estadoVoz.textContent = '🛑 Desactivado (diga \"activar\" para reactivar)';
@@ -603,11 +600,7 @@ function procesarPreguntaAvanzada(texto) {
     return true;
   }
   if (texto.includes("creador")|| texto.includes("creadores")|| texto.includes("crearon")|| texto.includes("creo")) {
-    hablar("fui creado por los chicos de la carrera de tecnico superior en mecatronica del sistema dual entre el anio 2024 y 2025. se dividieron en tres equipos, mecanica, electronica y software, y me fueron armando parte por parte.");
-    return true;
-  }
-  if (texto.includes("mecatrónica")) {
-    hablar("La mecatrónica es la disciplina que integra mecánica, electrónica e informática para diseñar y construir productos inteligentes y sistemas automatizados, como la robótica.");
+    hablar("fui creado por los chicos de la carrera de tecnico superior en mecatrónica del sistema dual entre el anio 2024 y 2025. se dividieron en tres equipos, mecanica, electronica y software, y me fueron armando parte por parte.");
     return true;
   }
   if (texto.includes("hacer")|| texto.includes("haces")) {
@@ -680,7 +673,7 @@ function procesarPreguntaAvanzada(texto) {
     return true;
   }
 
-  if (texto.includes("derecha")) {
+  if (texto.includes("girar a la derecha")) {
     console.log(">> Ejecutando: DERECHA");
     hablar("Girando a la derecha.");
     enviarComandoNodeRed("derecha");
@@ -693,15 +686,15 @@ function procesarPreguntaAvanzada(texto) {
     enviarComandoNodeRed("bailar");
     return true;
   }
-  
-  if (texto.includes("izquierda")) {
+
+  if (texto.includes("girar a la izquierda")) {
     console.log(">> Ejecutando: IZQUIERDA");
     hablar("Girando a la izquierda.");
     enviarComandoNodeRed("izquierda");
     return true;
   }
 
-  if (texto.includes("asentir")) {
+  if (texto.includes("aceptar")) {
     console.log(">> Ejecutando: ASENTIR");
     hablar("YES YES");
     enviarComandoNodeRed("asentir");
@@ -711,7 +704,7 @@ function procesarPreguntaAvanzada(texto) {
   if (texto.includes("negar")) {
     console.log(">> Ejecutando: NEGAR");
     hablar("NO NO");
-    enviarComandoNodeRed("no");
+    enviarComandoNodeRed("negar");
     return true;
   }
 
@@ -743,7 +736,98 @@ function procesarPreguntaAvanzada(texto) {
     enviarComandoNodeRed("festejar"); 
     return true;
   }
+  if (texto.includes("reposo") || texto.includes('origen')) {
+    console.log(">> Ejecutando: HOME");
+    hablar("Yendo a mi posicion de reposo");
+    enviarComandoNodeRed("home"); 
+    return true;
+  }
 
+  //Secuencias para hacer demostraciones
+  if (texto.includes("levantar brazo derecho") ) {
+    console.log(">> Ejecutando: levantar_brazo_derecho");
+    hablar("Levantando brazo derecho");
+    enviarComandoNodeRed("levantar_brazo_derecho"); 
+    return true;
+  }
+  if (texto.includes("bajar brazo derecho") ) {
+    console.log(">> Ejecutando: bajar_brazo_derecho");
+    hablar("bajando brazo derecho");
+    enviarComandoNodeRed("bajar_brazo_derecho"); 
+    return true;
+  }
+  if (texto.includes("flexionar codo derecho") ) {
+    console.log(">> Ejecutando: flex_codo_der");
+    hablar("flexionando codo derecho");
+    enviarComandoNodeRed("flex_codo_der"); 
+    return true;
+  }
+  if (texto.includes("extender codo derecho") ) {
+    console.log(">> Ejecutando: ext_codo_der");
+    hablar("extendiendo codo derecho");
+    enviarComandoNodeRed("ext_codo_der"); 
+    return true;
+  }
+  
+  if (texto.includes("levantar brazo izquierdo") ) {
+    console.log(">> Ejecutando: levantar_brazo_izquierdo");
+    hablar("Levantando brazo izquierdo");
+    enviarComandoNodeRed("levantar_brazo_izquierdo"); 
+    return true;
+  }
+   if (texto.includes("bajar brazo izquierdo") ) {
+    console.log(">> Ejecutando: bajar_brazo_izquierdo");
+    hablar("bajando brazo izquierdo");
+    enviarComandoNodeRed("bajar_brazo_izquierdo"); 
+    return true;
+  }
+  if (texto.includes("flexionar codo izquierdo") ) {
+    console.log(">> Ejecutando: flex_codo_izq");
+    hablar("flexionando codo izquierdo");
+    enviarComandoNodeRed("flex_codo_izq"); 
+    return true;
+  }
+  if (texto.includes("extender codo izquierdo") ) {
+    console.log(">> Ejecutando: ext_codo_izq");
+    hablar("extendiendo codo izquierdo");
+    enviarComandoNodeRed("ext_codo_izq"); 
+    return true;
+  }
+
+   if (texto.includes("levantar cabeza") ) {
+    console.log(">> Ejecutando: levantar_cabeza");
+    enviarComandoNodeRed("levantar_cabeza"); 
+    return true;
+  }
+  if (texto.includes("bajar cabeza") ) {
+    console.log(">> Ejecutando: bajar_cabeza");
+    enviarComandoNodeRed("bajar_cabeza"); 
+    return true;
+  }
+  if (texto.includes("abrir pinza derecha") ) {
+    console.log(">> Ejecutando: abrir_pinzas_der");
+    hablar("abriendo pinza derecha");
+    enviarComandoNodeRed("abrir_pinzas_der"); 
+    return true;
+  }
+  if (texto.includes("cerrar pinza derecha") ) {
+    console.log(">> Ejecutando: cerrar_pinzas_der");
+    hablar("cerrando pinza derecha");
+    enviarComandoNodeRed("cerrar_pinzas_der"); 
+    return true;
+  }
+  if (texto.includes("abrir pinza izquierda") ) {
+    console.log(">> Ejecutando: abrir_pinzas_izq");
+    hablar("abriendo pinza izquierda");
+    enviarComandoNodeRed("abrir_pinzas_izq"); 
+    return true;
+  }
+  if (texto.includes("cerrar pinza izquierda") ) {
+    console.log(">> Ejecutando: cerrar_pinzas_izq");
+    hablar("cerrando pinza izquierda");
+    enviarComandoNodeRed("cerrar_pinzas_izq"); 
+    return true;
+  }
 
   // --- Búsqueda en el array de preguntasRespuestas (si existe) ---
   if (typeof preguntasRespuestas !== 'undefined') {
