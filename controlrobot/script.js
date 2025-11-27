@@ -673,83 +673,92 @@ function procesarPreguntaAvanzada(texto) {
 
   // --- Comandos a Node-RED ---
   
-  // 1. Verificamos si dijiste el nombre (Cherobot o Che robot)
-  //const mencionaNombre = texto.includes("che robot") || texto.includes("robot");
-
-  if (mencionaNombre && texto.includes("saludar")|| texto.includes("saluda")) {
+  if (texto.includes("saludar") || texto.includes("saluda")) {
+    console.log(">> Ejecutando: SALUDAR");
     hablar("¡Hola! Te saludo con mucho gusto.");
     enviarComandoNodeRed("saludar"); 
     return true;
   }
 
-  if (mencionaNombre && texto.includes("derecha")) {
+  if (texto.includes("derecha")) {
+    console.log(">> Ejecutando: DERECHA");
     hablar("Girando a la derecha.");
     enviarComandoNodeRed("derecha");
     return true;
   }
 
-  if (mencionaNombre && texto.includes("bailar")) {
+  if (texto.includes("bailar")) {
+    console.log(">> Ejecutando: BAILAR");
     hablar("Con mucho gusto te muestro mis pasos robóticos");
     enviarComandoNodeRed("bailar");
     return true;
   }
 
-  if (mencionaNombre && texto.includes("izquierda")) {
+  if (texto.includes("izquierda")) {
+    console.log(">> Ejecutando: IZQUIERDA");
     hablar("Girando a la izquierda.");
     enviarComandoNodeRed("izquierda");
     return true;
   }
 
-  if (mencionaNombre && texto.includes("asentir")) {
+  if (texto.includes("asentir")) {
+    console.log(">> Ejecutando: ASENTIR");
     hablar("YES YES");
     enviarComandoNodeRed("asentir");
     return true;
   }
 
-  if (mencionaNombre && texto.includes("negar")) {
+  if (texto.includes("negar")) {
+    console.log(">> Ejecutando: NEGAR");
     hablar("NO NO");
     enviarComandoNodeRed("no");
     return true;
   }
 
-  if (mencionaNombre && texto.includes("detener")) {
+  if (texto.includes("detener")) {
+    console.log(">> Ejecutando: DETENER");
     hablar("Ok, me detengo");
     enviarComandoNodeRed("frenar");
     return true;
   }
 
-  // Nota: 'hola' suele estar repetido en la parte conversacional, 
-  // pero aquí fuerza el saludo físico si dices "Che robot hola"
-  if (mencionaNombre && texto.includes("hola")) {
+  // Ahora si dices solo "hola", también ejecuta el saludo físico
+  if (texto.includes("hola")) {
+    console.log(">> Ejecutando: HOLA FISICO");
     hablar("¡Hola! ¿Cómo estás?");
     enviarComandoNodeRed("saludar");
     return true;
   }
   
-  if (mencionaNombre && (texto.includes("mate") || texto.includes("mattioli"))) {
-    hablar("Si, no hay problema, yo sirvo el mate, solo pon el termo y el mate en frente de mis manos, yo hago el resto.");
+  if (texto.includes("mate") || texto.includes("mattioli")) {
+    console.log(">> Ejecutando: MATE");
+    hablar("Si, no hay problema, yo sirvo el mate, solo pon el termo y el mate en frente de mis manos.");
     enviarComandoNodeRed("servir_mate"); 
     return true;
   }
 
-  if (mencionaNombre && (texto.includes("festejar") || texto.includes('festejo'))) {
+  if (texto.includes("festejar") || texto.includes('festejo')) {
+    console.log(">> Ejecutando: FESTEJAR");
     hablar("Dale, vamos a festejar");
     enviarComandoNodeRed("festejar"); 
     return true;
   }
 
 
-  // --- Respuestas predefinidas ---
-  for (const item of preguntasRespuestas) {
-    for (const frase of item.frases) {
-      if (texto.includes(frase.toLowerCase())) {
-        hablar(item.respuesta);
-        return true; // encontró una respuesta
+  // --- Búsqueda en el array de preguntasRespuestas (si existe) ---
+  if (typeof preguntasRespuestas !== 'undefined') {
+    for (const item of preguntasRespuestas) {
+      for (const frase of item.frases) {
+        if (texto.includes(frase.toLowerCase())) {
+          console.log(">> Respuesta Array encontrada para:", frase);
+          hablar(item.respuesta);
+          return true; 
+        }
       }
     }
   }
 
-  return false; // no coincidió con ninguna pregunta ni comando
+  return false; 
 }
 
 async function enviarPreguntaPersonalizada(pregunta){
