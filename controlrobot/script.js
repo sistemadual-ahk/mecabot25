@@ -693,7 +693,7 @@ function procesarPreguntaAvanzada(texto) {
     enviarComandoNodeRed("bailar");
     return true;
   }
-
+  
   if (texto.includes("izquierda")) {
     console.log(">> Ejecutando: IZQUIERDA");
     hablar("Girando a la izquierda.");
